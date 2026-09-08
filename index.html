@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selçukhan Ünekbaş — Competition law, innovation, and the firm</title>
+<meta name="description" content="Selçukhan Ünekbaş is a postdoctoral researcher in law at the European University Institute working on competition law, empirical law and economics, and firm capabilities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Century Schoolbook is used where installed; otherwise the site loads TeX Gyre Schola,
+     an open-licence typeface drawn from the same design, from the fonts/ folder. */
+  @font-face { font-family: "Schola"; src: url("fonts/texgyreschola-regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Schola"; src: url("fonts/texgyreschola-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+  @font-face { font-family: "Schola"; src: url("fonts/texgyreschola-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Schola"; src: url("fonts/texgyreschola-bolditalic.woff2") format("woff2"); font-weight: 700; font-style: italic; font-display: swap; }
+
+  :root {
+    --paper: #ffffff;
+    --ink: #1f2a33;
+    --ink-soft: #566470;
+    --verdigris: #2e6f6b;
+    --rule: #d9dedc;
+    --measure: 40rem;
+    --serif: "Century Schoolbook", "Century Schoolbook L", "New Century Schoolbook", "Schola", Georgia, serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--verdigris); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--ink); }
+  a:focus-visible {
+    outline: 2px solid var(--verdigris);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .wrap { max-width: 62rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Header and tabs */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1.75rem 0 0;
+    border-bottom: 1px solid var(--rule);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 0.9375rem;
+  }
+  header .name { color: var(--ink); text-decoration: none; font-weight: 500; padding-bottom: 1rem; display: inline-block; }
+  header nav a {
+    display: inline-block;
+    margin-left: 1.75rem;
+    padding-bottom: 1rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+  header nav a:hover { color: var(--ink); }
+  header nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--verdigris); }
+
+  /* Panels: only the active one is shown */
+  .panel { display: none; }
+  .panel.is-active { display: block; }
+
+  /* Landing (About): text left, portrait right */
+  .hero {
+    padding: 5.5rem 0 3.5rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 15rem;
+    gap: 3rem;
+    align-items: start;
+  }
+  .hero .portrait {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    border-radius: 2px;
+  }
+  .hero h1 {
+    font-weight: 400;
+    font-size: clamp(1.9rem, 4.2vw, 3rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    max-width: 24ch;
+    margin: 0 0 2rem;
+  }
+  .hero .affil {
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* Page heading for Research and Commentary */
+  .page-head { padding: 4rem 0 2.5rem; }
+  .page-head h1 {
+    font-weight: 400;
+    font-size: clamp(1.6rem, 3.2vw, 2.25rem);
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+  }
+  .page-head p { max-width: var(--measure); color: var(--ink-soft); margin: 0; }
+
+  .body { max-width: var(--measure); padding-bottom: 4rem; }
+  .body p { margin: 0 0 1.25rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .body h2 {
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: var(--ink-soft);
+    margin: 3rem 0 1rem;
+  }
+  .body h2:first-child { margin-top: 0; }
+
+  /* Two limbs */
+  .limbs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2.5rem 0;
+    border: 1px solid var(--rule);
+  }
+  .limb { padding: 1.75rem 1.75rem 2rem; }
+  .limb:first-child { border-right: 1px solid var(--rule); }
+  .limb h3 { font-weight: 700; font-size: 1.25rem; margin: 0 0 0.75rem; }
+  .limb p { margin: 0; color: var(--ink-soft); font-size: 1rem; }
+  .limb-question { font-style: italic; color: var(--ink); margin-bottom: 0.75rem !important; }
+
+  /* Lists of publications and commentary */
+  .entries { list-style: none; padding: 0; margin: 0; }
+  .entries li { padding: 1rem 0; border-top: 1px solid var(--rule); }
+  .entries li:last-child { border-bottom: 1px solid var(--rule); }
+  .entries strong { font-weight: 700; display: block; }
+  .entries .meta {
+    display: block;
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 0.875rem;
+    color: var(--ink-soft);
+    margin-top: 0.3rem;
+  }
+
+  .affiliations { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+  .affiliations li { margin: 0 0 0.5rem; }
+  .affiliations em { font-style: italic; color: var(--ink-soft); }
+
+  /* Contact and profile links */
+  .links {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.75rem;
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 0.9375rem;
+  }
+
+  footer {
+    padding: 1.5rem 0 3rem;
+    border-top: 1px solid var(--rule);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 0.875rem;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 44rem) {
+    .hero { padding: 3rem 0 2.5rem; grid-template-columns: 1fr; gap: 2rem; }
+    .hero .portrait { width: 9rem; order: -1; }
+    .page-head { padding: 3rem 0 2rem; }
+    .limbs { grid-template-columns: 1fr; }
+    .limb:first-child { border-right: 0; border-bottom: 1px solid var(--rule); }
+    header nav a { margin-left: 1rem; }
+  }
+</style>
+<noscript><style>.panel { display: block; }</style></noscript>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <a class="name" href="#about">Selçukhan Ünekbaş</a>
+    <nav aria-label="Sections">
+      <a href="#about" data-tab="about">About</a>
+      <a href="#research" data-tab="research">Research</a>
+      <a href="#commentary" data-tab="commentary">Commentary</a>
+    </nav>
+  </header>
+
+  <!-- ===================== ABOUT (landing) ===================== -->
+  <section class="panel" id="about">
+    <div class="hero">
+      <div>
+        <h1>I study how firms innovate and compete, and how competition law comes to know them.</h1>
+        <p class="affil">
+          Postdoctoral Researcher, Department of Law, European University Institute<br>
+          Research Fellow, Tusher Strategic Initiative for Technology Leadership, Berkeley Haas<br>
+          Research Fellow, Dynamic Competition Initiative
+        </p>
+      </div>
+      <img class="portrait" src="photo.jpg" alt="Portrait of Selçukhan Ünekbaş" width="1000" height="1250">
+    </div>
+    <div class="body">
+      <p>I am a legal scholar working at the intersection of competition law, empirical law and economics, and the management literature on firm capabilities and innovation. My work asks what competition law would look like if it took seriously how firms actually build, combine, and lose the capabilities that let them innovate.</p>
+      <p>I completed my PhD in Law at the European University Institute in Florence under the supervision of Nicolas Petit, and joined the Department of Law as a Postdoctoral Researcher in 2026. I was an International Scholar-in-Residence at Georgetown Law in 2024, and before the PhD I practised competition and regulatory law as an associate at Dentons in Istanbul.</p>
+      <p>At the Dynamic Competition Initiative I lead the capabilities research track and organise the annual young scholars conference. I am Managing Editor of the <em>Journal of Dynamic Competition</em> and co-editor, with Fischer and Hornkohl, of <em>Innovation and the Revamping of Competition Law</em> (Nomos, forthcoming 2026).</p>
+      <ul class="affiliations">
+        <li>PhD in Law, European University Institute</li>
+        <li>LLM, European University Institute <em>(2022)</em></li>
+        <li>LLM in European Business Law, Vrije Universiteit Brussel <em>(2020)</em></li>
+        <li>LLB, Anadolu University <em>(2019)</em></li>
+      </ul>
+      <ul class="links">
+        <li><a href="mailto:selcukhan.unekbas@eui.eu">selcukhan.unekbas@eui.eu</a></li>
+        <li><a href="cv.pdf">CV (PDF)</a></li>
+        <li><a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=5211400">SSRN</a></li>
+        <li><a href="https://orcid.org/0000-0002-4795-1300">ORCID</a></li>
+        <li><a href="https://www.linkedin.com/in/sel%C3%A7ukhan-%C3%BCnekba%C5%9F-526927186">LinkedIn</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== RESEARCH ===================== -->
+  <section class="panel" id="research">
+    <div class="page-head">
+      <h1>Research</h1>
+      <p>My research programme has two limbs that feed each other. One is empirical and looks outward at markets; the other is theoretical and looks inward at the law.</p>
+    </div>
+    <div class="body">
+      <div class="limbs">
+        <div class="limb">
+          <h3>Empirical</h3>
+          <p class="limb-question">How do firms operate as actors of innovation in markets, and what can competition law do about it?</p>
+          <p>Large-sample studies of merger enforcement and acquisition outcomes, using tools from management research and industrial organisation to test what actually happens to targets, talent, and search after a deal.</p>
+        </div>
+        <div class="limb">
+          <h3>Theoretical</h3>
+          <p class="limb-question">How does law receive knowledge about firms and markets, and rebuild it in its own language and logic?</p>
+          <p>Work on the epistemology of competition law: how concepts such as competition, the firm, and innovation travel from economics and management into legal reasoning, and what gets lost or added on the way.</p>
+        </div>
+      </div>
+
+      <h2>Working papers</h2>
+      <ul class="entries">
+        <li>
+          <strong><a href="https://dx.doi.org/10.2139/ssrn.7353959">Keeper Acquisitions? A Survival Analysis of Technology Mergers</a></strong>
+          <span class="meta">Under review</span>
+        </li>
+        <li>
+          <strong><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6883220">Capabilities Analysis in Competition Policy: Evidence from Merger Remedies</a></strong>
+          <span class="meta">With Nicolas Petit</span>
+        </li>
+      </ul>
+
+      <h2>Peer-reviewed articles</h2>
+      <ul class="entries">
+        <li>
+          <strong><a href="https://academic.oup.com/antitrust/advance-article/doi/10.1093/jaenfo/jnag013/8780341">Do Competition Authorities Learn from Each Other?</a></strong>
+          <span class="meta">Journal of Antitrust Enforcement (2026, forthcoming)</span>
+        </li>
+        <li>
+          <strong><a href="https://doi.org/10.1093/jeclap/lpag031">Invisible Deterrence in Merger Policy: Why the Prohibition Rate Says Little</a></strong>
+          <span class="meta">(2026) 17 Journal of European Competition Law &amp; Practice 1, with Bo Heiden, Frederic Jenny, Nicolas Petit, and David Bosco</span>
+        </li>
+        <li>
+          <strong><a href="https://www.americanbar.org/content/dam/aba/publications/antitrust/journal/86/issue-3/killer-acquisitions.pdf">Killer Acquisitions: Evidence from European Merger Cases</a></strong>
+          <span class="meta">(2025) 86(3) Antitrust Law Journal 647, with Marc Ivaldi and Nicolas Petit</span>
+        </li>
+        <li>
+          <strong><a href="https://doi.org/10.2924/EJLS.2024.013">The Rule of the Least Imperfect: A Review of Despoina Mantzari, <em>Courts, Regulators, and the Scrutiny of Economic Evidence</em></a></strong>
+          <span class="meta">(2024) 16 European Journal of Legal Studies 147</span>
+        </li>
+        <li>
+          <strong><a href="https://doi.org/10.1093/jeclap/lpae022">Efficiency and Capabilities in Article 102 TFEU</a></strong>
+          <span class="meta">(2024) 15(3) Journal of European Competition Law &amp; Practice 178</span>
+        </li>
+        <li>
+          <strong><a href="https://doi.org/10.34632/mclawreview.2023.15892">Verticalization of Data Sharing and the Difficult Path to “Eunnovation”</a></strong>
+          <span class="meta">(2023) 7(2) Market and Competition Law Review 131</span>
+        </li>
+        <li>
+          <strong><a href="https://tlcp.law.uiowa.edu/sites/tlcp.law.uiowa.edu/files/2024-08/kalimo_0.pdf">Procuring Sustainability: How the Public Sector Can Deliver on its Greening Potential</a></strong>
+          <span class="meta">(2022) 32 Journal of Transnational Law &amp; Contemporary Problems 33, with Harri Kalimo et al.</span>
+        </li>
+        <li>
+          <strong><a href="https://doi.org/10.7172/1689-9024.YARS.2022.15.25.2">Resurrection of the Comfort Letter: Back to the Future?</a></strong>
+          <span class="meta">(2022) 15(25) Yearbook of Antitrust and Regulatory Studies 37</span>
+        </li>
+        <li>
+          <strong><a href="https://doi.org/10.13135/2785-7867/6957">Competition, Privacy, and Justifications: Invoking Privacy to Justify Abusive Conduct Under Article 102 TFEU</a></strong>
+          <span class="meta">(2022) 1(2) Journal of Law, Market &amp; Innovation 123</span>
+        </li>
+        <li>
+          <strong><a href="https://doi.org/10.1163/22119000-12340212">Scaling the Great Wall: The EU–China Comprehensive Agreement on Investment and Market Access</a></strong>
+          <span class="meta">(2021) 22(3) The Journal of World Investment &amp; Trade 347</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== COMMENTARY ===================== -->
+  <section class="panel" id="commentary">
+    <div class="page-head">
+      <h1>Commentary</h1>
+      <p>Blog posts, op-eds, and policy contributions. Newest first.</p>
+    </div>
+    <div class="body">
+      <!--
+        To add a piece, copy one <li>…</li> block below and paste it at the top of the list.
+        To link a title, wrap it: <strong><a href="https://…">Title</a></strong>
+      -->
+      <ul class="entries">
+        <li>
+          <strong><a href="https://www.promarket.org/2026/06/05/the-eu-draft-merger-guidelines-treatment-of-capabilities-needs-revisiting/">The EU Draft Merger Guidelines’ Treatment of Capabilities Needs Revisiting</a></strong>
+          <span class="meta">ProMarket, 5 June 2026</span>
+        </li>
+        <li>
+          <strong><a href="https://legalblogs.wolterskluwer.com/competition-blog/the-eus-draft-merger-guidelines-and-the-innovation-shield-never-judge-a-shield-by-its-cover/">The EU’s Draft Merger Guidelines and the “Innovation Shield”: Never Judge a Shield by its Cover?</a></strong>
+          <span class="meta">Kluwer Competition Law Blog, 8 May 2026</span>
+        </li>
+        <li>
+          <strong><a href="https://blogs.law.ox.ac.uk/oblb/blog-post/2026/05/why-use-digital-markets-act-cloud">Why Use the Digital Markets Act for Cloud?</a></strong>
+          <span class="meta">Oxford Business Law Blog, 4 May 2026</span>
+        </li>
+        <li>
+          <strong><a href="https://truthonthemarket.com/2026/03/17/keeping-titans-in-quarantine/">Keeping Titans in Quarantine</a></strong>
+          <span class="meta">Truth on the Market, 17 March 2026</span>
+        </li>
+        <li>
+          <strong><a href="https://cepr.org/voxeu/columns/killer-acquisitions-digital-markets-may-be-more-hype-reality">Killer Acquisitions in Digital Markets May Be More Hype than Reality</a></strong>
+          <span class="meta">VoxEU / CEPR, 15 September 2023, with Marc Ivaldi and Nicolas Petit</span>
+        </li>
+        <li>
+          <strong><a href="https://digi-con.org/states-as-firms-regulation-in-the-digital-age/">States as Firms: Regulation in the Digital Age</a></strong>
+          <span class="meta">The Digital Constitutionalist, 19 May 2023</span>
+        </li>
+        <li>
+          <strong><a href="https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13796-EU-competition-law-guidelines-on-exclusionary-abuses-by-dominant-undertakings/F3407400_en">A Dynamic Formulation for the AEC Test</a></strong>
+          <span class="meta">Contribution to the European Commission Call for Evidence, 24 April 2023, with Bowman Heiden, Nicolas Petit, and Thibault Schrepel</span>
+        </li>
+        <li>
+          <strong><a href="https://www.ijlt.in/post/a-deep-dive-into-the-denizens-of-morality-technology-and-law-are-digital-platforms-different">A Deep Dive into the Denizens of Morality, Technology, and Law: Are Digital Platforms Different?</a></strong>
+          <span class="meta">Indian Journal of Law and Technology Blog, 15 February 2023</span>
+        </li>
+        <li>
+          <strong><a href="https://competitionlawblog.kluwercompetitionlaw.com/2023/01/18/some-implications-of-transatlantic-trade-issues-on-competition-law/">Some Implications of Transatlantic Trade Issues on Competition Law</a></strong>
+          <span class="meta">Kluwer Competition Law Blog, 18 January 2023</span>
+        </li>
+        <li>
+          <strong><a href="https://www.networklawreview.org/phd-advantage/">Do First-Mover Advantages Last?</a></strong>
+          <span class="meta">Network Law Review, 21 December 2022</span>
+        </li>
+        <li>
+          <strong><a href="https://digi-con.org/of-instigators-and-consummators-how-should-law-respond-to-technological-change/">Of Instigators and Consummators: How Should Law Respond to Technological Change?</a></strong>
+          <span class="meta">The Digital Constitutionalist, 8 November 2022, with Elina Nerantzi</span>
+        </li>
+        <li>
+          <strong><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4320595">An Analysis of the General Court’s Google Shopping Judgment</a></strong>
+          <span class="meta">BASEAK CORE Papers No. 18, 2022, with Barış Yüksel (in Turkish)</span>
+        </li>
+        <li>
+          <strong><a href="https://competitionlawblog.kluwercompetitionlaw.com/2022/09/27/thou-shalt-not-commit-filicide-antitrusts-make-or-buy-problem-reinvigorated/">Thou Shalt Not Commit Filicide: Antitrust’s Make-or-Buy Problem Reinvigorated</a></strong>
+          <span class="meta">Kluwer Competition Law Blog, 27 September 2022</span>
+        </li>
+        <li>
+          <strong><a href="https://competitionlawblog.kluwercompetitionlaw.com/2022/07/04/diligence-is-due-indeed-competition-law-as-a-barrier-to-sustainable-supply-chains/">Diligence Is Due Indeed: Competition Law as a Barrier to Sustainable Supply Chains?</a></strong>
+          <span class="meta">Kluwer Competition Law Blog, 4 July 2022</span>
+        </li>
+        <li>
+          <strong><a href="https://repository.graduateinstitute.ch/record/299329">How to Rein in Fossil Fuel Subsidies? Towards a New WTO Regime</a></strong>
+          <span class="meta">Graduate Institute of Geneva CTEI Working Paper, 2021, with Simon Happersberger and Eleanor R. Mateo</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    Selçukhan Ünekbaş, Florence
+  </footer>
+
+</div>
+
+<script>
+  // Show one panel at a time, driven by the URL hash so each tab has its own shareable link.
+  (function () {
+    var tabs = ['about', 'research', 'commentary'];
+    function show() {
+      var id = location.hash.replace('#', '');
+      if (tabs.indexOf(id) === -1) id = 'about';
+      tabs.forEach(function (t) {
+        document.getElementById(t).classList.toggle('is-active', t === id);
+        var link = document.querySelector('nav a[data-tab="' + t + '"]');
+        if (t === id) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
+      });
+      window.scrollTo(0, 0);
+    }
+    window.addEventListener('hashchange', show);
+    show();
+  })();
+</script>
+</body>
+</html>
